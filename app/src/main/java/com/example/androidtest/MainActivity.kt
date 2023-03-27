@@ -20,6 +20,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var buttonUp: Button
     lateinit var buttonDown: Button
     lateinit var name: EditText
+    lateinit var highscore: Button
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +34,16 @@ class MainActivity : AppCompatActivity() {
         buttonUp = findViewById(R.id.buttonUp)
         buttonDown = findViewById(R.id.buttonDown)
         name = findViewById(R.id.name)
+        highscore = findViewById(R.id.highscore)
+
+
+        highscore.setOnClickListener{
+
+            val intent = Intent(this, HighActivity::class.java)
+
+            startActivity(intent)
+
+        }
 
         buttonUp.setOnClickListener() {
             counter++

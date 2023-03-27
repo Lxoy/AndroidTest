@@ -43,5 +43,11 @@
             android:background="?colorSecondary"
             android:textColor="?colorOnSecondary"/>
 
+        <Button
+            android:id="@+id/highscore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HIGHSCORE" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
