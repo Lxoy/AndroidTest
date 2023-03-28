@@ -25,5 +25,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/send" />
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RadioButton"
+            android:background="?colorSecondary"
+            android:textColor="?colorOnSecondary"/>
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RadioButton"
+            android:background="?colorSecondary"
+            android:textColor="?colorOnSecondary"/>
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RadioButton"
+            android:background="?colorSecondary"
+            android:textColor="?colorOnSecondary"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
