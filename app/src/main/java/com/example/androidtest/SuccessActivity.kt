@@ -22,11 +22,12 @@ class SuccessActivity : AppCompatActivity() {
         buttonSend = findViewById(R.id.buttonSend)
 
         textViewMessage = findViewById(R.id.textViewMessage)
-        var name = intent.getStringExtra("name")
-        textViewMessage.text = "$name, congratulations on your 10 steps!"
+        val name = intent.getStringExtra("name")
+
+        textViewMessage.text = getString(R.string.success, name)
 
         buttonSend.setOnClickListener(){
-            val uri: Uri = Uri.parse("smsto: 09112345678")
+            val uri: Uri = Uri.parse("sms to: 09112345678")
             val intent = Intent(Intent.ACTION_SENDTO, uri)
             intent.putExtra("sms_body", name)
             startActivity(intent)

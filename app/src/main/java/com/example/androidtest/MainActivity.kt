@@ -1,6 +1,8 @@
 package com.example.androidtest
 
+import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -12,6 +14,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -116,6 +119,14 @@ class MainActivity : AppCompatActivity() {
                 textViewCounter.text = counter.toString()
                 true
             }
+            R.id.english -> {
+                changeLanguage(this, "en")
+                recreate()
+            }
+            R.id.croatian -> {
+                changeLanguage(this, "hr")
+                recreate()
+            }
         }
         return super.onOptionsItemSelected(item)
     }
@@ -132,5 +143,16 @@ class MainActivity : AppCompatActivity() {
             textViewCounter.text = counter.toString()
         }
         return super.onContextItemSelected(item)
+    }
+
+    @Suppress("DEPRECATION")
+    fun changeLanguage(context: Context, language: String) {
+        val locale = Locale(language)
+        Locale.setDefault(locale)
+        val res = context.resources
+        val config = Configuration(res.configuration)
+        config.setLocale(locale)
+        context.createConfigurationContext(config)
+        res.updateConfiguration(config, res.displayMetrics)
     }
 }
