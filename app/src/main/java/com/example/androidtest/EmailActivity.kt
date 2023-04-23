@@ -31,8 +31,8 @@ class EmailActivity : AppCompatActivity() {
 
         // attach setOnClickListener to button with Intent object define in it
         button.setOnClickListener {
-            val username = "MAIL"
-            val password = "PASSWORD"
+            val username = "tt0492913@gmail.com"
+            val password = "ipjjeetwugigblxq"
             val emailSend = sendTo.text.toString()
             val emailSubject = subject.text.toString()
             val emailBody = body.text.toString()
