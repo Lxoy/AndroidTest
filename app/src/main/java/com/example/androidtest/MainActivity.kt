@@ -1,5 +1,6 @@
 package com.example.androidtest
 
+import android.app.DownloadManager
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
@@ -15,6 +16,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import java.util.*
+import android.net.Uri
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,6 +26,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var buttonDown: Button
     lateinit var name: EditText
     lateinit var highscore: Button
+    lateinit var emailButton: Button
+    lateinit var smsButton: Button
+    lateinit var downloadButton: Button
 
 
 
@@ -38,15 +43,37 @@ class MainActivity : AppCompatActivity() {
         buttonDown = findViewById(R.id.buttonDown)
         name = findViewById(R.id.name)
         highscore = findViewById(R.id.highscore)
+        emailButton = findViewById(R.id.emailButton)
+        smsButton = findViewById(R.id.sms)
+        downloadButton = findViewById(R.id.downloadButton)
 
 
         highscore.setOnClickListener{
-
             val intent = Intent(this, HighActivity::class.java)
-
             startActivity(intent)
-
         }
+
+        emailButton.setOnClickListener{
+            val intent = Intent(this, EmailActivity::class.java)
+            startActivity(intent)
+        }
+
+        smsButton.setOnClickListener{
+            val intent = Intent(this, SmsActivity::class.java)
+            startActivity(intent)
+        }
+
+        downloadButton.setOnClickListener{
+            val url = "https://media.licdn.com/dms/image/C4D03AQFxBQleAIEHDg/profile-displayphoto-shrink_800_800/0/1622750170430?e=2147483647&v=beta&t=RG0KFjAzSJRXJ_WL4fdJG2G1rCH2ok7OMEwTojh7zag"
+            val request = DownloadManager.Request(Uri.parse(url))
+                .setTitle("Skola")
+                .setDescription("Skola")
+                .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
+                .setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI or DownloadManager.Request.NETWORK_MOBILE)
+            val downloadManager = getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
+            downloadManager.enqueue(request)
+        }
+
 
         buttonUp.setOnClickListener() {
             counter++

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Relative Layout -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EmailActivity">
+
+    <!-- Edit text for email id -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/sendToView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send To:"
+            android:textColor="#0F9D58" />
+
+        <EditText
+            android:id="@+id/sendToText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/emailSubjectView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email Subject:"
+            android:textColor="#0F9D58" />
+
+        <EditText
+            android:id="@+id/emailSubjectText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/emailBodyView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email Body:"
+            android:textColor="#0F9D58" />
+
+        <EditText
+            android:id="@+id/emailBodyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send" />
+
+    </LinearLayout>
+
+    <!-- Edit text for email subject -->
+
+    <!-- Edit text for email body -->
+
+    <!-- text Views for label -->
+
+    <!-- Button to send email -->
+</androidx.constraintlayout.widget.ConstraintLayout>
